@@ -119,7 +119,7 @@ jobs:
       run: |
         cat $CONFIG_FILE $GENERAL_CONFIG_FILE > $OPENWRT_PATH/.config
         chmod +x $DIY_SCRIPT
-        cd $OPENWRT_PATH/package/
+        cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
         
     - name: Download DL Package(下载DL软件包)
