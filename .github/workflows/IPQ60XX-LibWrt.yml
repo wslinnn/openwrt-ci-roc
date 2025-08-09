@@ -108,20 +108,20 @@ jobs:
               find "$dir" -type f -exec touch {} +
           done
         fi
-  
-    - name: Load Custom Configuration(加载自定义配置)
-      run: |
-        cat $CONFIG_FILE $GENERAL_CONFIG_FILE > $OPENWRT_PATH/.config
-        chmod +x $DIY_SCRIPT
-        cd $OPENWRT_PATH
-        $GITHUB_WORKSPACE/$DIY_SCRIPT
-        
+
     - name: Install Feeds(安装feeds)
       run: |
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-
+        
+    - name: Load Custom Configuration(加载自定义配置)
+      run: |
+        cat $CONFIG_FILE $GENERAL_CONFIG_FILE > $OPENWRT_PATH/.config
+        chmod +x $DIY_SCRIPT
+        cd $OPENWRT_PATH/package/
+        $GITHUB_WORKSPACE/$DIY_SCRIPT
+        
     - name: Download DL Package(下载DL软件包)
       run: |
         cd $OPENWRT_PATH
