@@ -54,7 +54,7 @@ UPDATE_PACKAGE() {
 	fi
 }
 
-UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
+# UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 
 git clone https://github.com/sirpdboy/luci-app-netspeedtest package/netspeedtest
 
