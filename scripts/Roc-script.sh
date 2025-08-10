@@ -55,11 +55,8 @@ UPDATE_PACKAGE() {
 }
 
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
-UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
-UPDATE_PACKAGE "ddns-go" "sirpdboy/luci-app-ddns-go" "main"
-UPDATE_PACKAGE "diskman" "lisaac/luci-app-diskman" "master"
-UPDATE_PACKAGE "easytier" "EasyTier/luci-app-easytier" "main"
-UPDATE_PACKAGE "netspeedtest" "sirpdboy/luci-app-netspeedtest" "js" "" "homebox speedtest"
+
+git clone https://github.com/sirpdboy/luci-app-netspeedtest package/netspeedtest
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
